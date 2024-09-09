@@ -1,0 +1,332 @@
+body {
+    background: linear-gradient(135deg, #66545e, #aa6f73);
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    transition: background-color 0.3s;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+header {
+    background-color: #66545e;
+    color: #fff;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.branding {
+    text-align: center;
+    flex: 1;
+}
+
+.branding #app-name {
+    font-size: 48px;
+    color: #f6e0b5;
+    font-weight: bold;
+    margin: 0;
+    animation: taskifyAnimation 3s infinite;
+}
+
+.tagline {
+    font-size: 18px;
+    color: #ccc;
+    margin-top: 5px;
+}
+
+.header-right {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    position: absolute;
+    right: 20px;
+    top: 10px;
+}
+
+.theme-toggle {
+    margin-bottom: 20px;
+}
+
+/* Theme toggle button styling */
+.theme-toggle button {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #fff;
+    padding: 8px;
+    transition: color 0.3s, transform 0.3s ease;
+    display: flex;
+    align-items: right;
+}
+
+.theme-toggle button:hover {
+    transform: scale(1.1);
+}
+
+/* Sun and Moon Icon styles */
+#theme-icon {
+    font-size: 24px;
+    transition: transform 0.3s ease;
+}
+
+body.dark-mode #theme-icon {
+    content: '🌙';
+}
+
+
+.progress-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.progress-text {
+    font-size: 14px;
+    color: #ccc;
+    margin-bottom: 5px;
+}
+
+.progress-bar-container {
+    background-color: #444;
+    border-radius: 10px;
+    width: 150px;
+    height: 10px;
+    margin-top: 5px;
+}
+
+.progress-bar {
+    height: 100%;
+    background-color: #f6e0b5;
+    border-radius: 10px;
+    width: 50%; /* This will dynamically update based on task completion */
+    transition: width 0.3s ease-in-out;
+}
+
+.sidebar {
+    position: fixed;
+    left: -250px;
+    top: 0;
+    height: 100%;
+    width: 250px;
+    background-color: #66545e;
+    transition: left 0.3s;
+    z-index: 1;
+}
+
+.sidebar-toggle {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    z-index: 2;
+}
+
+.sidebar-content {
+    padding: 20px;
+    margin-top: 40px;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.user-image-small {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 10px;
+}
+
+.greeting-text {
+    font-size: 18px;
+    margin: 0;
+    color: #fff;
+}
+
+.categories h3 {
+    color: #fff;
+}
+
+.categories ul {
+    list-style: none;
+    padding: 0;
+}
+
+.categories li {
+    padding: 10px 0;
+    color: #ccc;
+    cursor: pointer;
+}
+
+.categories li:hover {
+    color: #fff;
+}
+
+main {
+    margin-left: 50px;
+    padding: 20px;
+    flex-grow: 1;
+}
+
+.task-input {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Horizontally center the input fields */
+    justify-content: center; /* Vertically center the content if needed */
+    margin: 0 auto; /* This helps to further center the container itself */
+    padding: 20px;
+}
+.task-input input, 
+.task-input textarea, 
+.task-input button {
+    width: 500px; /* Adjust width to make the input smaller */
+    height: 40px; /* Adjust height if needed */
+    padding: 5px; /* Padding for better spacing inside the input */
+    font-size: 14px; /* Smaller font size */
+    border-radius: 5px; /* Rounded corners for a clean look */
+    border: 1px solid #ccc; /* Border style */
+    margin-bottom: 10px; /* Space between input fields */
+}
+
+.task-input button {
+    background-color: #aa6f73;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.task-input button:hover {
+    background-color: #9f6165;
+}
+
+.task-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.task-item {
+    background-color: #fff;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #66545e;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.task-item:hover {
+    transform: scale(1.02);
+}
+
+.task-item.completed {
+    background-color: #d4edda;
+    text-decoration: line-through;
+}
+
+.task-buttons {
+    display: flex;
+    gap: 5px;
+}
+
+.task-buttons button {
+    padding: 8px 12px;
+    font-size: 14px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.task-buttons .done-button {
+    background-color: #28a745;
+    color: white;
+}
+
+.task-buttons .done-button:hover {
+    background-color: #218838;
+}
+
+.task-buttons .undo-button {
+    background-color: #ffc107;
+    color: white;
+}
+
+.task-buttons .undo-button:hover {
+    background-color: #e0a800;
+}
+
+.task-buttons .delete-button {
+    background-color: #dc3545;
+    color: white;
+}
+
+.task-buttons .delete-button:hover {
+    background-color: #c82333;
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+    background-color: #121212;
+    color: #f4f4f4;
+}
+
+body.dark-mode header {
+    background-color: #222;
+}
+
+body.dark-mode .sidebar {
+    background-color: #333;
+}
+
+body.dark-mode .task-item {
+    background-color: #333;
+    color: #f4f4f4;
+    box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode .branding #app-name {
+    color: #f0c674;
+}
+
+body.dark-mode .task-item.completed {
+    background-color: #444;
+}
+
+body.dark-mode .progress-bar-container {
+    background-color: #555;
+}
+
+body.dark-mode .progress-bar {
+    background-color: #f0c674;
+}
+@keyframes taskifyAnimation {
+    0% {
+        transform: scale(1);
+        color: #f0c674;
+    }
+    50% {
+        transform: scale(1.2);
+        color: #f6e0b5;
+    }
+    100% {
+        transform: scale(1);
+        color: #f6e0b5;
+    }
+}

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taskify - Your Smart TODO App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="branding">
+                <h1 id="app-name">Taskify📝</h1>
+                <p class="tagline">Your Ultimate Task Manager</p>
+            </div>
+            <div class="header-right">
+                <div class="theme-toggle">
+                    <button id="theme-toggle-btn">
+                        <span id="theme-icon">🌞</span>
+                    </button>
+                </div>
+                
+                <div class="progress-container">
+                    <div class="progress-text" id="progressText">0/1 Tasks Completed</div>
+                    <div class="progress-bar-container">
+                        <div class="progress-bar" id="progressBar"></div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        
+        <aside class="sidebar">
+            <button class="sidebar-toggle" id="sidebarToggle">☰</button>
+            <div class="sidebar-content">
+                <div class="user-info">
+                    <img src="programmer.png" alt="User Image" class="user-image-small">
+                    <h2 class="greeting-text">Hi User!</h2>
+                </div>
+                
+                <nav class="categories">
+                    <ul>
+                        <li id="allTasks">All Tasks</li>
+                        <li id="todaysTasks">Today's Tasks</li>
+                        <li id="importantTasks">Important Tasks</li>
+                        <li id="completedTasks">Completed Tasks</li>
+                        <li id="incompleteTasks">Incomplete Tasks</li>
+                    </ul>
+                </nav>
+            </div>
+        </aside>
+
+        <main>
+            <div class="task-input">
+                <input type="text" id="taskTitle" placeholder="Task Title">
+                <textarea id="taskDescription" placeholder="Task Description"></textarea>
+                <input type="date" id="taskDate">
+                <button id="addTaskButton"><span class="plus-sign">+</span> Add Task</button>
+            </div>
+            <div id="taskList" class="task-list">
+                <!-- Tasks will be appended here dynamically -->
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
